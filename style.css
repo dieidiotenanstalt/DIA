@@ -1,0 +1,279 @@
+/* Grundlayout */
+body, html {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 24px;
+  color: #e6edf3;
+  line-height: 1.6;
+  min-height: 100vh;
+  opacity: 1; /* Start unsichtbar für Fade-In */
+  transition: opacity 0.5s ease;
+}
+
+body.loaded {
+  opacity: 1; /* Fade-In beim Laden */
+}
+
+/* Fixiertes Hintergrundbild */
+#background {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('Die_IdiotenAnstalt.jpg') center/cover no-repeat;
+  z-index: -1;
+}
+
+/* Fixiertes Hintergrundbild Discord*/
+#background_DC {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('DieIdioten_Anstalt.jpg') center/cover no-repeat;
+  z-index: -1;
+}
+/* Fixiertes Hintergrundbild */
+#background_ds {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('datenschutz.jpg') center/cover no-repeat;
+  z-index: -1;
+}
+
+/* Fixiertes Hintergrundbild */
+#background_impress {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('impressum.jpg') center/cover no-repeat;
+  z-index: -1;
+}
+
+/* Fixiertes Hintergrundbild */
+#background_fbc {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('fbc_hintergrund.jpg') center/cover no-repeat;
+  z-index: -1;
+}
+
+/* Fixiertes Hintergrundbild */
+#background_dia {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('DIA_hintergrund.jpg') center/cover no-repeat;
+  z-index: -1;
+}
+
+/* Fixiertes Hintergrundbild */
+#background_ak {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('ankündigung_hintergrund.jpg') center/cover no-repeat;
+  z-index: -1;
+}
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: rgba(13,17,23,0.85);
+  border-bottom: 1px solid #30363d;
+  z-index: 1000;
+  padding: 0.6rem 1rem;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.logo {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+/* Navigation */
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+nav a {
+  color: #e6edf3;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover,
+nav a.active {
+  color: #00b4d8;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 5px;
+  min-width: 180px;
+  padding: 0.5rem 0;
+  z-index: 10;
+}
+
+.dropdown.open .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #e6edf3;
+}
+
+.dropdown-menu li a:hover {
+  background: #21262d;
+}
+
+/* Mobile Navigation */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media(max-width: 768px){
+  nav ul {
+    flex-direction: column;
+    display: none;
+    width: 100%;
+    background: #161b22;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  .dropdown-menu {
+    position: static;
+    border: none;
+    display: none;
+  }
+
+  .dropdown.open .dropdown-menu {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* Main */
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Footer */
+footer {
+  background: #161b22;
+  color: #8b949e;
+  text-align: center;
+  padding: 1rem;
+  border-top: 1px solid #30363d;
+}
+
+.footer-links a {
+  color: #00b4d8;
+  text-decoration: none;
+  margin: 0 0.3rem;
+}
+
+.footer-links a:hover {
+  color: #90e0ef;
+}
+
+/* Bild-Wrapper */
+.bild-wrapper {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.bild-wrapper img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* YouTube Video Wrapper */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 Verhältnis */
+  margin: 2rem 0;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.discord-link {
+  color: #1bd3d3; /* Discord-Blau, kann angepasst werden */
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+}
+
+.discord-link:hover {
+  color: #99aab5; /* Farbe beim Hover */
+}
+
+.datenschutz-link {
+  color: #ff3333; /* Discord-Blau, kann angepasst werden */
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+}
+
+.datenschutz-link:hover {
+  color: #fffb2d; /* Farbe beim Hover */
+}
